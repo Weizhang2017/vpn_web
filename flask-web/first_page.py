@@ -20,22 +20,22 @@ app.config['MAIL_USE_SSL'] = False
 def vpn_intro():
 	return render_template('main_page.html')
 
-@app.route('/client1.ovpn')
+@app.route('/client102.ovpn')
 def download_client_file():
-	return send_file('/home/wei/web-page/download/client1.ovpn')
+	return send_file('/home/wei/vpn_web/download/client102.ovpn')
 
 @app.route('/openvpn_client.apk')
 def download_android_client():
-	return send_file('/home/wei/web-page/download/openvpn_client.apk')
+	return send_file('/home/wei/vpn_web/download/openvpn_client.apk')
 
 @app.route('/openvpn_windows.zip')
 def download_windows_client():
-	return send_file('/home/wei/web-page/download/openvpn_windows.zip')
+	return send_file('/home/wei/vpn_web/download/openvpn_windows.zip')
 
 @app.route('/Tunnelblick.dmg')
 def download_macos_client():
-	return send_file('/home/wei/web-page/download/Tunnelblick.dmg')
-	
+	return send_file('/home/wei/vpn_web/download/Tunnelblick.dmg')
+
 @app.route('/send_message',methods=['POST'])
 def send_message():
 	req = request.form
@@ -75,7 +75,8 @@ def logout():
     session['logged_in'] = False
     return home()
 
-
+'''
 if __name__ == '__main__':
 	app.secret_key = os.urandom(12)
-	app.run(host='0.0.0.0', port=80, debug=True)
+	app.run(host='0.0.0.0', port=5000, debug=True)
+'''
